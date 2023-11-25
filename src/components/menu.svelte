@@ -1,7 +1,8 @@
 <script>
-    import { menuState } from "$lib/menu.js";
+    import { menuState, toggleMenu } from "$lib/menu.js";
     import {faChild, faHatWizard, faSignature} from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa";
+    import {onMount} from "svelte";
     let style = "opacity: 0; scale: 0.7";
     $: {
         if($menuState === false){
@@ -15,6 +16,17 @@
         {title: "ExtremeSkins", sub: "Skins for ExtremeRoles", icon: faChild},
         {title: "ExtremeNamePlate", sub: "NamePlate for ExtremeRoles", icon: faSignature},
     ]
+    onMount(() => {
+        window.addEventListener('click', handleClick);
+        return () => { window.removeEventListener('click', handleClick); };
+    });
+
+    function handleClick(event) {
+        if (event.target.closest('.menu, .logo')) return;
+        if ($menuState) {
+            toggleMenu()
+        }
+    }
 </script>
 
 <section style={style}>
