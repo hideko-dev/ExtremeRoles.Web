@@ -2,10 +2,10 @@
     import Fa from "svelte-fa";
     import {faBolt, faBrush, faCode, faFire} from "@fortawesome/free-solid-svg-icons";
     const cards = [
-        {title: "Advanced", description: "Hello World", icon: faFire},
-        {title: "Fast", description: "Hello World", icon: faBolt},
-        {title: "Open Source", description: "Hello World", icon: faCode},
-        {title: "Customizable", description: "Hello World", icon: faBrush},
+        {title: "Advanced", desc: "Hello World", icon: faFire},
+        {title: "Fast", desc: "Hello World", icon: faBolt},
+        {title: "Open Source", desc: "Hello World", icon: faCode},
+        {title: "Customizable", desc: "Hello", icon: faBrush},
     ];
 </script>
 
@@ -18,7 +18,7 @@
                 </div>
                 <p class="title">{c.title}</p>
             </div>
-            <p class="desc">{c.description}</p>
+            <p class="desc">{c.desc}</p>
         </div>
     {/each}
 </section>

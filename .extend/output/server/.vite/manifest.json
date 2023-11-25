@@ -7,6 +7,15 @@
     "isEntry": true,
     "src": ".extend/generated/server/internal.js"
   },
+  "_fa.js": {
+    "css": [
+      "_app/immutable/assets/fa.af927694.css"
+    ],
+    "file": "chunks/fa.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
   "_internal.js": {
     "file": "chunks/internal.js",
     "imports": [
@@ -15,6 +24,10 @@
   },
   "_ssr.js": {
     "file": "chunks/ssr.js"
+  },
+  "fa.css": {
+    "file": "_app/immutable/assets/fa.af927694.css",
+    "src": "fa.css"
   },
   "node_modules/@fontsource/inter/files/inter-latin-100-normal.woff": {
     "file": "_app/immutable/assets/inter-latin-100-normal.59ff1c64.woff",
@@ -177,8 +190,12 @@
     "isEntry": true,
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js"
   },
+  "src/lib/assets/bg.webp": {
+    "file": "_app/immutable/assets/bg.395e5fa2.webp",
+    "src": "src/lib/assets/bg.webp"
+  },
   "src/pages/+layout.css": {
-    "file": "_app/immutable/assets/_layout.819fd262.css",
+    "file": "_app/immutable/assets/_layout.64d75ce9.css",
     "src": "src/pages/+layout.css"
   },
   "src/pages/+layout.svelte": {
@@ -221,11 +238,12 @@
       "_app/immutable/assets/poppins-latin-900-normal.940cfac0.woff"
     ],
     "css": [
-      "_app/immutable/assets/_layout.819fd262.css"
+      "_app/immutable/assets/_layout.64d75ce9.css"
     ],
     "file": "entries/pages/_layout.svelte.js",
     "imports": [
-      "_ssr.js"
+      "_ssr.js",
+      "_fa.js"
     ],
     "isEntry": true,
     "src": "src/pages/+layout.svelte"
@@ -245,23 +263,30 @@
     "src": "src/pages/+page.svelte"
   },
   "src/pages/home/+page.css": {
-    "file": "_app/immutable/assets/_page.fd26d093.css",
+    "file": "_app/immutable/assets/_page.006cb102.css",
     "src": "src/pages/home/+page.css"
   },
-  "src/pages/home/+page.js": {
-    "file": "entries/pages/home/_page.js",
-    "isEntry": true,
-    "src": "src/pages/home/+page.js"
-  },
   "src/pages/home/+page.svelte": {
+    "assets": [
+      "_app/immutable/assets/bg.395e5fa2.webp"
+    ],
     "css": [
-      "_app/immutable/assets/_page.fd26d093.css"
+      "_app/immutable/assets/_page.006cb102.css"
     ],
     "file": "entries/pages/home/_page.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_fa.js"
+    ],
+    "isEntry": true,
+    "src": "src/pages/home/+page.svelte"
+  },
+  "src/pages/status/+page.svelte": {
+    "file": "entries/pages/status/_page.svelte.js",
     "imports": [
       "_ssr.js"
     ],
     "isEntry": true,
-    "src": "src/pages/home/+page.svelte"
+    "src": "src/pages/status/+page.svelte"
   }
 }

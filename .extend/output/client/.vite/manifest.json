@@ -4,18 +4,19 @@
       ".extend/generated/client-optimized/nodes/0.js",
       ".extend/generated/client-optimized/nodes/1.js",
       ".extend/generated/client-optimized/nodes/2.js",
-      ".extend/generated/client-optimized/nodes/3.js"
+      ".extend/generated/client-optimized/nodes/3.js",
+      ".extend/generated/client-optimized/nodes/4.js"
     ],
-    "file": "_app/immutable/entry/app.b322b387.js",
+    "file": "_app/immutable/entry/app.b8507b23.js",
     "imports": [
-      "_scheduler.0f962ddd.js",
-      "_index.1909f747.js"
+      "_scheduler.05577254.js",
+      "_index.dff9d965.js"
     ],
     "isEntry": true,
     "src": ".extend/generated/client-optimized/app.js"
   },
   ".extend/generated/client-optimized/nodes/0.css": {
-    "file": "_app/immutable/assets/0.b5d3417d.css",
+    "file": "_app/immutable/assets/0.10a71efe.css",
     "src": ".extend/generated/client-optimized/nodes/0.css"
   },
   ".extend/generated/client-optimized/nodes/0.js": {
@@ -58,76 +59,99 @@
       "_app/immutable/assets/poppins-latin-900-normal.940cfac0.woff"
     ],
     "css": [
-      "_app/immutable/assets/0.b5d3417d.css"
+      "_app/immutable/assets/0.10a71efe.css"
     ],
-    "file": "_app/immutable/nodes/0.304d27e6.js",
+    "file": "_app/immutable/nodes/0.591ac99d.js",
     "imports": [
-      "_scheduler.0f962ddd.js",
-      "_index.1909f747.js"
+      "_scheduler.05577254.js",
+      "_index.dff9d965.js",
+      "_index.92d6d1e2.js"
     ],
     "isDynamicEntry": true,
     "isEntry": true,
     "src": ".extend/generated/client-optimized/nodes/0.js"
   },
   ".extend/generated/client-optimized/nodes/1.js": {
-    "file": "_app/immutable/nodes/1.ad875553.js",
+    "file": "_app/immutable/nodes/1.699002ac.js",
     "imports": [
-      "_scheduler.0f962ddd.js",
-      "_index.1909f747.js",
-      "_singletons.0e27eaa2.js"
+      "_scheduler.05577254.js",
+      "_index.dff9d965.js",
+      "_singletons.73704671.js"
     ],
     "isDynamicEntry": true,
     "isEntry": true,
     "src": ".extend/generated/client-optimized/nodes/1.js"
   },
   ".extend/generated/client-optimized/nodes/2.js": {
-    "file": "_app/immutable/nodes/2.47bac6ce.js",
+    "file": "_app/immutable/nodes/2.abcafed6.js",
     "imports": [
-      "_scheduler.0f962ddd.js",
-      "_index.1909f747.js",
-      "__page.1822104e.js"
+      "_scheduler.05577254.js",
+      "_index.dff9d965.js",
+      ".extend/generated/client-optimized/nodes/3.js"
     ],
     "isDynamicEntry": true,
     "isEntry": true,
     "src": ".extend/generated/client-optimized/nodes/2.js"
   },
+  ".extend/generated/client-optimized/nodes/3.css": {
+    "file": "_app/immutable/assets/3.f9680e17.css",
+    "src": ".extend/generated/client-optimized/nodes/3.css"
+  },
   ".extend/generated/client-optimized/nodes/3.js": {
-    "file": "_app/immutable/nodes/3.7d1f8f6f.js",
+    "assets": [
+      "_app/immutable/assets/bg.395e5fa2.webp"
+    ],
+    "css": [
+      "_app/immutable/assets/3.f9680e17.css"
+    ],
+    "file": "_app/immutable/nodes/3.faf2f16f.js",
     "imports": [
-      "__page.1822104e.js"
+      "_scheduler.05577254.js",
+      "_index.dff9d965.js",
+      "_index.92d6d1e2.js"
     ],
     "isDynamicEntry": true,
     "isEntry": true,
     "src": ".extend/generated/client-optimized/nodes/3.js"
   },
-  "__page.1822104e.js": {
-    "css": [
-      "_app/immutable/assets/_page.fd26d093.css"
+  ".extend/generated/client-optimized/nodes/4.js": {
+    "file": "_app/immutable/nodes/4.fcf546b9.js",
+    "imports": [
+      "_scheduler.05577254.js",
+      "_index.dff9d965.js"
     ],
-    "file": "_app/immutable/chunks/_page.1822104e.js",
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": ".extend/generated/client-optimized/nodes/4.js"
+  },
+  "_index.92d6d1e2.js": {
+    "css": [
+      "_app/immutable/assets/index.af927694.css"
+    ],
+    "file": "_app/immutable/chunks/index.92d6d1e2.js",
     "imports": [
-      "_scheduler.0f962ddd.js",
-      "_index.1909f747.js"
+      "_scheduler.05577254.js",
+      "_index.dff9d965.js"
     ]
   },
-  "_index.1909f747.js": {
-    "file": "_app/immutable/chunks/index.1909f747.js",
+  "_index.dff9d965.js": {
+    "file": "_app/immutable/chunks/index.dff9d965.js",
     "imports": [
-      "_scheduler.0f962ddd.js"
+      "_scheduler.05577254.js"
     ]
   },
-  "_page.css": {
-    "file": "_app/immutable/assets/_page.fd26d093.css",
-    "src": "_page.css"
+  "_scheduler.05577254.js": {
+    "file": "_app/immutable/chunks/scheduler.05577254.js"
   },
-  "_scheduler.0f962ddd.js": {
-    "file": "_app/immutable/chunks/scheduler.0f962ddd.js"
-  },
-  "_singletons.0e27eaa2.js": {
-    "file": "_app/immutable/chunks/singletons.0e27eaa2.js",
+  "_singletons.73704671.js": {
+    "file": "_app/immutable/chunks/singletons.73704671.js",
     "imports": [
-      "_scheduler.0f962ddd.js"
+      "_scheduler.05577254.js"
     ]
+  },
+  "index.css": {
+    "file": "_app/immutable/assets/index.af927694.css",
+    "src": "index.css"
   },
   "node_modules/@fontsource/inter/files/inter-latin-100-normal.woff": {
     "file": "_app/immutable/assets/inter-latin-100-normal.59ff1c64.woff",
@@ -274,12 +298,16 @@
     "src": "node_modules/@fontsource/poppins/files/poppins-latin-900-normal.woff2"
   },
   "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/entry/start.143248f7.js",
+    "file": "_app/immutable/entry/start.2e202b91.js",
     "imports": [
-      "_scheduler.0f962ddd.js",
-      "_singletons.0e27eaa2.js"
+      "_scheduler.05577254.js",
+      "_singletons.73704671.js"
     ],
     "isEntry": true,
     "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js"
+  },
+  "src/lib/assets/bg.webp": {
+    "file": "_app/immutable/assets/bg.395e5fa2.webp",
+    "src": "src/lib/assets/bg.webp"
   }
 }
