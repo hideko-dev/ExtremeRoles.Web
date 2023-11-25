@@ -12,6 +12,5 @@
         align-items: center;
         justify-content: center;
         height: max-content;
-        background: url("../../lib/assets/bg.webp") no-repeat center/cover;
     }
 </style>

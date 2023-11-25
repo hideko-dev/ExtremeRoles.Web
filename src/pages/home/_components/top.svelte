@@ -1,19 +1,14 @@
 <script>
-    import Features from "./features.svelte";
-    import Btns from "./btns.svelte";
 </script>
 
-<!--    <div>-->
-<!--        <p class="title">Powerful AmongUs mod for <span>advanced</span> users</p>-->
-<!--        <p class="bio">Among Us mods that are very powerful and finely customizable for all users to enjoy.</p>-->
-<!--    </div>-->
-
 <section>
-    <div>
-        <p class="title">Powerful AmongUs mod for <span>advanced</span> users</p>
-        <p class="sub">Among Us mods that are very powerful and finely customizable for all users to enjoy.</p>
-        <Btns/>
-        <Features/>
+    <div class="left">
+        <p class="title">ExtremeRoles</p>
+        <p class="bio">Temp text temp text temp text temp text</p>
+        <a class="btn" href="https://exr-docs.vercel.app">Documentation</a>
+    </div>
+    <div class="right">
+        <p>ここにbg transparentな画像</p>
     </div>
 </section>
 
@@ -24,26 +19,58 @@
         width: 100%;
         display: flex;
         align-items: center;
+        justify-content: center;
     }
     .title {
-        font-size: 50px;
-        font-weight: 500;
-        margin-left: 15%;
-        width: 40rem;
-        line-height: 4rem;
+        font-weight: 600;
+        font-size: 60px;
     }
-    .sub {
-        margin-left: 15%;
-        color: #9b9b9b;
-        font-weight: 500;
-        font-size: 16px;
-        width: 70%;
+    .bio {
+        width: 8rem;
+        line-height: 22px;
+        margin-left: 3px;
     }
-    span {
-        background: linear-gradient(to right, #00b2ff, #d000ff);
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
+    .left {
+        margin-right: 6rem;
     }
-    @media (max-width: 800px) {
+    .right {
+        background: #eeeeee;
+        width: 25rem;
+        height: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+    }
+    .btn {
+        border: 1px solid black;
+        width: max-content;
+        padding-inline: 15px;
+        padding-block: 5px;
+        border-radius: 8px;
+        transition: all 0.3s;
+        position: relative;
+        top: 25px;
+        text-decoration: none;
+        color: black;
+    }
+    .btn::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background: black;
+        border-radius: 6px;
+        z-index: -1;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    .btn:hover {
+        color: white;
+    }
+    .btn:hover::before {
+        width: 100%;
     }
 </style>

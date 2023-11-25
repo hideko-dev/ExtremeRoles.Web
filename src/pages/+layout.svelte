@@ -1,6 +1,6 @@
 <script>
 	import Fonts from "$lib/fonts.svelte";
-	import Header from "../components/header/header.svelte"
+	import Header from "../components/header.svelte"
 	import '../globals.css'
 </script>
 
