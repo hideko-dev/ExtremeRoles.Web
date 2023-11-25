@@ -1,12 +1,6 @@
 <script>
     import Features from "./features.svelte";
-    import {onMount} from "svelte";
-    let lineWidth = 0;
-    onMount(() => {
-        setTimeout(() => {
-            lineWidth = 90
-        }, 100);
-    })
+    import Btns from "./btns.svelte";
 </script>
 
 <!--    <div>-->
@@ -15,9 +9,10 @@
 <!--    </div>-->
 
 <section>
-    <div class="cover">
-        <p class="title">ExtremeRoles</p>
-        <div class="line" style="width: {lineWidth}%"/>
+    <div>
+        <p class="title">Powerful AmongUs mod for <span>advanced</span> users</p>
+        <p class="sub">Among Us mods that are very powerful and finely customizable for all users to enjoy.</p>
+        <Btns/>
         <Features/>
     </div>
 </section>
@@ -28,25 +23,26 @@
         height: 100vh;
         width: 100%;
         display: flex;
+        align-items: center;
     }
     .title {
-        font-family: 'Poppins', sans-serif;
         font-size: 50px;
         font-weight: 500;
-        margin-left: 5%;
+        margin-left: 15%;
+        width: 40rem;
+        line-height: 4rem;
     }
-    .line {
-        background: linear-gradient(to right, white, transparent 80%);
-        height: 1px;
-        margin-left: 5.1%;
-        transition: all 0.5s ease;
-        border-radius: 100px;
+    .sub {
+        margin-left: 15%;
+        color: #9b9b9b;
+        font-weight: 500;
+        font-size: 16px;
+        width: 70%;
     }
-    .cover {
-        position: absolute;
-        left: 0;
-        bottom: 9%;
-        width: 100%;
+    span {
+        background: linear-gradient(to right, #00b2ff, #d000ff);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
     }
     @media (max-width: 800px) {
     }

@@ -50,7 +50,8 @@
         color: #9a9a9a;
     }
     .card {
-        background: rgb(25, 25, 25);
+        background: rgba(25, 25, 25, 0.9);
+        backdrop-filter: blur(50px);
         width: 12rem;
         height: 7rem;
         padding: 0.7rem;
@@ -65,5 +66,8 @@
         align-items: center;
         /*justify-content: center;*/
         gap: 10px;
+        position: absolute;
+        left: 5%;
+        bottom: 8%;
     }
 </style>

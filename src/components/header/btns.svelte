@@ -28,7 +28,6 @@
     }
     .btn {
         background: rgba(0, 0, 0, 0.6);
-        border: 1px solid #282828;
         color: #d7d7d7;
         backdrop-filter: blur(10px);
         padding-inline: 10px;
