@@ -1,14 +1,15 @@
 <script>
+    import { _ } from "svelte-i18n"
 </script>
 
 <section>
     <div class="left">
         <p class="title">ExtremeRoles</p>
-        <p class="bio">Temp text temp text temp text temp text</p>
-        <a class="btn" href="https://exr-docs.vercel.app">Documentation</a>
+        <p class="bio">{$_('home.bio')}</p>
+        <a class="btn" href="https://exr-docs.vercel.app">{$_('home.docs')}</a>
     </div>
     <div class="right">
-        <p>ここにbg transparentな画像</p>
+        <p>Img</p>
     </div>
 </section>
 
@@ -53,6 +54,7 @@
         top: 25px;
         text-decoration: none;
         color: black;
+        user-select: none;
     }
     .btn::before {
         content: "";

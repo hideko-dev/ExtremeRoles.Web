@@ -1,9 +1,13 @@
 <script>
     import Top from "./_components/top.svelte";
+    import Features from "./_components/features.svelte";
 </script>
 
 <section>
-    <Top/>
+    <div style="width: 100%">
+        <Top/>
+        <Features/>
+    </div>
 </section>
 
 <style>
