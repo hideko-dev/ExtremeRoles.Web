@@ -1,33 +1,59 @@
+<script>
+    import FeaturesOverlay from "./featuresOverlay.svelte";
+    import { openFeaturesOverlay } from "$lib/featuresOverlay.js";
+    const cards = {
+        roles: {
+            title: "+50 roles",
+            sub: "Hello World"
+        },
+
+        options: {
+            title: "+700 options",
+            sub: "Hello World"
+        },
+
+        sub1: {
+            title: "Custom cosmetics",
+            sub: "Hello World"
+        },
+
+        sub2: {
+            title: "Advanced",
+            sub: "Hello World"
+        },
+
+        sub3: {
+            title: "Fastest",
+            sub: "Hello World"
+        }
+    }
+</script>
+
 <section>
+    <FeaturesOverlay/>
     <ul class="cards">
-
-        <li class="card roles">
-            <p class="title">+50 roles</p>
-            <p class="sub">Hello World</p>
+        <li class="card roles" on:click={() => openFeaturesOverlay(1)}>
+            <p class="title">{cards.roles.title}</p>
+            <p class="sub">{cards.roles.sub}</p>
         </li>
-
-        <li class="card options">
-            <p class="title">+700 options</p>
-            <p class="sub">Hello World</p>
+        <li class="card options" on:click={() => openFeaturesOverlay(2)}>
+            <p class="title">{cards.options.title}</p>
+            <p class="sub">{cards.roles.sub}</p>
         </li>
-
         <div class="subs">
-            <li class="card cosmetics subc">
+            <li class="card cosmetics subc" on:click={() => openFeaturesOverlay(3)}>
             <p class="title">Custom cosmetics</p>
             <p class="sub">Hello World</p>
             </li>
-
-            <li class="card advanced subc">
+            <li class="card advanced subc" on:click={() => openFeaturesOverlay(4)}>
             <p class="title">Advanced</p>
             <p class="sub">Hello World</p>
           </li>
-
-            <li class="card fastest subc">
+            <li class="card fastest subc" on:click={() => openFeaturesOverlay(5)}>
             <p class="title">Fastest</p>
             <p class="sub">Hello World</p>
           </li>
         </div>
-
     </ul>
 </section>
 
@@ -37,14 +63,16 @@
         width: 50%;
         margin: 0 auto;
         font-family: 'Poppins', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .cards {
         display: grid;
-        grid-template-columns: 35rem 20rem; /* 2列のグリッド */
-        grid-template-rows: 15rem auto; /* 2行のグリッド */
-        gap: 10px; /* グリッドアイテム間の間隔 */
-        padding: 20px; /* グリッドコンテナのパディング */
-        height: 82rem; /* 高さの合計 (15rem + カード2の高さ + 2 * gap) */
+        grid-template-columns: 37rem 20rem;
+        grid-template-rows: 15rem auto;
+        gap: 10px;
+        height: max-content;
     }
     .card {
         background: white;
@@ -61,15 +89,16 @@
     }
     .card .title {
         position: absolute;
-        left: 20px;
-        bottom: 10px;
+        left: 25px;
+        bottom: 15px;
         font-size: 20px;
         font-weight: 500;
         transition: all 0.2s;
+        line-height: 1.5rem;
     }
     .card .sub {
         position: absolute;
-        left: 22px;
+        left: 25px;
         bottom: 0;
         font-size: 15px;
         font-weight: 400;
@@ -78,7 +107,7 @@
         opacity: 0;
     }
     .card:hover .title {
-        bottom: 28px;
+        bottom: 32px;
     }
     .card:hover .sub {
         bottom: 10px;
@@ -86,7 +115,7 @@
     }
 
     .roles {
-        width: 35rem;
+        width: 37rem;
         height: 15rem;
     }
 
@@ -98,10 +127,11 @@
     .subs {
         display: flex;
         gap: 10px;
+        height: 16.3rem;
     }
 
     .subc {
         width: 100%;
-        height: 16.3rem;
+        height: 100%;
     }
 </style>
