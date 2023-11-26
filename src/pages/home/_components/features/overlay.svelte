@@ -1,6 +1,9 @@
 <script>
+    import Fa from "svelte-fa";
+    import Cards from "./cards.svelte"
     let style = "opacity: 0; pointer-events: none"
     import { featuresOverlayState, closeFeaturesOverlay } from "$lib/featuresOverlay.js";
+    import {faXmark} from "@fortawesome/free-solid-svg-icons";
     $: {
         const state = $featuresOverlayState;
         if(state !== 0){
@@ -12,13 +15,29 @@
 </script>
 
 <section style={style}>
-    <div>
-        <div on:click={closeFeaturesOverlay}>click to close</div>
-        <p>このIDは割り振り用: {$featuresOverlayState}</p>
+    <div style="width: 80%">
+        <div class="closebtn" on:click={closeFeaturesOverlay}>
+            <p>close</p>
+        </div>
+        <Cards/>
     </div>
 </section>
 
 <style>
+    .closebtn {
+        border: 1px solid white;
+        width: 2.8rem;
+        height: 2.8rem;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 0 auto;
+    }
+    .closebtn p {
+        font-size: 11px;
+        color: rgb(244, 244, 244);
+    }
     section {
         position: fixed;
         top: 0;
@@ -32,5 +51,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .contents {
+        background:red;
     }
 </style>

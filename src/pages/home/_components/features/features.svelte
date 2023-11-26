@@ -1,5 +1,5 @@
 <script>
-    import FeaturesOverlay from "./featuresOverlay.svelte";
+    import FeaturesOverlay from "./overlay.svelte";
     import { openFeaturesOverlay } from "$lib/featuresOverlay.js";
     const cards = {
         roles: {

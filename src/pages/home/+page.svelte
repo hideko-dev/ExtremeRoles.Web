@@ -1,6 +1,6 @@
 <script>
     import Top from "./_components/top.svelte";
-    import Features from "./_components/features.svelte";
+    import Features from "./_components/features/features.svelte";
 </script>
 
 <section>
