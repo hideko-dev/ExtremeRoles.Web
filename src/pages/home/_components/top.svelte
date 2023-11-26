@@ -59,7 +59,7 @@
     .btn::before {
         content: "";
         position: absolute;
-        left: 0;
+        right: 0;
         top: 0;
         width: 0;
         height: 100%;
@@ -74,5 +74,6 @@
     }
     .btn:hover::before {
         width: 100%;
+        left: 0;
     }
 </style>
