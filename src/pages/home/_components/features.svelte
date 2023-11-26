@@ -11,20 +11,22 @@
             <p class="sub">Hello World</p>
         </li>
 
-        <li class="card cosmetics">
+        <div class="subs">
+            <li class="card cosmetics subc">
             <p class="title">Custom cosmetics</p>
             <p class="sub">Hello World</p>
-        </li>
+            </li>
 
-        <li class="card advanced">
+            <li class="card advanced subc">
             <p class="title">Advanced</p>
             <p class="sub">Hello World</p>
-        </li>
+          </li>
 
-        <li class="card fastest">
+            <li class="card fastest subc">
             <p class="title">Fastest</p>
             <p class="sub">Hello World</p>
-        </li>
+          </li>
+        </div>
 
     </ul>
 </section>
@@ -38,9 +40,11 @@
     }
     .cards {
         display: grid;
-        grid-template-columns: 20rem 20rem 15rem;
-        grid-template-rows: 300px 300px;
-        gap: 20px 20px;
+        grid-template-columns: 35rem 20rem; /* 2列のグリッド */
+        grid-template-rows: 15rem auto; /* 2行のグリッド */
+        gap: 10px; /* グリッドアイテム間の間隔 */
+        padding: 20px; /* グリッドコンテナのパディング */
+        height: 82rem; /* 高さの合計 (15rem + カード2の高さ + 2 * gap) */
     }
     .card {
         background: white;
@@ -49,6 +53,8 @@
         list-style: none;
         transition: all 0.3s;
         cursor: pointer;
+        padding: 20px;
+        box-sizing: border-box;
     }
     .card:hover {
         box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
@@ -78,7 +84,24 @@
         bottom: 10px;
         opacity: 1;
     }
+
     .roles {
+        width: 35rem;
+        height: 15rem;
+    }
+
+    .options {
         width: 20rem;
+        height: 32rem;
+    }
+
+    .subs {
+        display: flex;
+        gap: 10px;
+    }
+
+    .subc {
+        width: 100%;
+        height: 16.3rem;
     }
 </style>
