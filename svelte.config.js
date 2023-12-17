@@ -6,7 +6,7 @@ const config = {
 		outDir: ".extend",
 		files: {
 			routes: "src/pages",
-			appTemplate: "src/static.html"
+			appTemplate: "./stands/static.html"
 		}
 	},
 };

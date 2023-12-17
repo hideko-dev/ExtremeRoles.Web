@@ -1,147 +1,113 @@
 <script>
-    import { onMount } from 'svelte';
-    import { fade } from "svelte/transition";
-    import { featuresOverlayState } from '$lib/featuresOverlay.js';
-    import { cards } from "$lib/featuresCards.js";
-    let bars = [];
-    let title = "";
-    let sub = "";
-    let interval;
-
-    $: {
-        if ($featuresOverlayState === 0) {
-            resetBars();
-        } else {
-            bars = Array.from({ length: 5 }, () => {
-                return { width: 0 };
-            });
-            startTimer($featuresOverlayState);
-            const id = $featuresOverlayState
-            if(id === 1){
-                title = cards.roles.title
-                sub = cards.roles.sub
-            } else if(id === 2){
-                title = cards.options.title
-                sub = cards.options.sub
-            } else if(id === 3){
-                title = cards.sub1.title
-                sub = cards.sub1.sub
-            } else if(id === 4){
-                title = cards.sub2.title
-                sub = cards.sub2.sub
-            } else if(id === 5){
-                title = cards.sub3.title
-                sub = cards.sub3.sub
-            }
-        }
-    }
-
-    function resetBars() {
-        bars = Array.from({ length: 5 }, () => {
-            return { width: 0 };
-        });
-        clearInterval(interval);
-        interval = null;
-    }
-
-    function setBar(id){
-        bars.forEach((bar, index) => {
-            if(id-1 === index) {
-                bar.width = 100
-            } else {
-                bar.width = 0
-            }
-        })
-    }
-
-    function startTimer(id) {
-        interval = null;
-        clearInterval(interval);
-        bars.forEach((bar, index) => {
-            if(id-1 === index) {
-                bar.width = 100
-            }
-        });
-        interval = setInterval(() => {
-            setBar(id)
-            if(id !== 5){
-                featuresOverlayState.set(id+1)
-                if(id === 1){
-                    title = cards.options.title
-                    sub = cards.options.sub
-                } else if(id === 2){
-                    title = cards.sub1.title
-                    sub = cards.sub1.sub
-                } else if(id === 3){
-                    title = cards.sub2.title
-                    sub = cards.sub2.sub
-                } else if(id === 4){
-                    title = cards.sub3.title
-                    sub = cards.sub3.sub
-                }
-            } else {
-                featuresOverlayState.set(1)
-                title = cards.roles.title
-                sub = cards.roles.sub
-            }
-        }, 5000)
-    }
+    import { openFeaturesOverlay } from "$lib/features/overlay.js";
+    import { cards } from "$lib/features/cards.js";
+    import Features from "./features.svelte";
+    import { handleScroll } from "$lib/scroll/scroller.js";
 </script>
 
 <section>
-    <div class="left">
-        <div class="timebars">
-            {#each bars as {width}}
-                <div class="bar"><div class="progress" style="width: {width}%"/></div>
-            {/each}
+    <ul class="cards">
+        <li class="card roles" on:click={() => handleScroll("roles")}>
+            <p class="title">{cards.roles.title}</p>
+            <p class="sub">{cards.roles.sub}</p>
+        </li>
+        <li class="card options" on:click={() => handleScroll("options")}>
+            <p class="title">{cards.options.title}</p>
+            <p class="sub">{cards.roles.sub}</p>
+        </li>
+        <div class="subs">
+            <li class="card cosmetics subc" on:click={() => openFeaturesOverlay(3)}>
+            <p class="title">Custom cosmetics</p>
+            <p class="sub">Hello World</p>
+            </li>
+            <li class="card advanced subc" on:click={() => openFeaturesOverlay(4)}>
+            <p class="title">Advanced</p>
+            <p class="sub">Hello World</p>
+          </li>
+            <li class="card fastest subc" on:click={() => openFeaturesOverlay(5)}>
+            <p class="title">Fastest</p>
+            <p class="sub">Hello World</p>
+          </li>
         </div>
-
-        {#key $featuresOverlayState}
-            <div in:fade={{ duration: 200, delay: 100 }} out:fade={{ duration: 200, delay: 0 }} style="position: absolute">
-                <p>{title}</p>
-                <p>{sub}</p>
-            </div>
-        {/key}
-    </div>
-
-    <div class="right">
-        <p>ここにIMG</p>
-    </div>
+    </ul>
 </section>
+<Features/>
 
 <style>
-    .right {
-        margin-left: 3rem;
-        background: #2f2f2f;
-        height: 25rem;
-        width: 15rem;
-        border-radius: 20px;
-    }
     section {
-        display: flex;
-        justify-content: center;
-    }
-
-    .timebars {
+        height: 100vh;
+        width: 50%;
+        margin: 0 auto;
+        font-family: 'Poppins', sans-serif;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: 37rem 20rem;
+        grid-template-rows: 15rem auto;
         gap: 10px;
+        height: max-content;
     }
-
-    .progress {
-        height: 100%;
-        background-color: white;
-        border-radius: 100px;
-        pointer-events: none;
-        transition: all 5s;
-    }
-
-    .bar {
-        width: 50px;
-        height: 4px;
-        background: gray;
-        border-radius: 100px;
+    .card {
+        background: white;
+        border-radius: 30px;
+        position: relative;
+        list-style: none;
+        transition: all 0.3s;
         cursor: pointer;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .card:hover {
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    }
+    .card .title {
+        position: absolute;
+        left: 25px;
+        bottom: 15px;
+        font-size: 20px;
+        font-weight: 500;
+        transition: all 0.2s;
+        line-height: 1.5rem;
+    }
+    .card .sub {
+        position: absolute;
+        left: 25px;
+        bottom: 0;
+        font-size: 15px;
+        font-weight: 400;
+        transition: all 0.2s;
+        color: gray;
+        opacity: 0;
+    }
+    .card:hover .title {
+        bottom: 32px;
+    }
+    .card:hover .sub {
+        bottom: 10px;
+        opacity: 1;
+    }
+
+    .roles {
+        width: 37rem;
+        height: 15rem;
+    }
+
+    .options {
+        width: 20rem;
+        height: 32rem;
+    }
+
+    .subs {
+        display: flex;
+        gap: 10px;
+        height: 16.3rem;
+    }
+
+    .subc {
+        width: 100%;
+        height: 100%;
     }
 </style>

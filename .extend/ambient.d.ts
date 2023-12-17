@@ -37,7 +37,7 @@ declare module '$env/static/private' {
 	export const CONDA_PROMPT_MODIFIER: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_4480: string;
+	export const EFC_6096: string;
 	export const FIG_JETBRAINS_SHELL_INTEGRATION: string;
 	export const FPS_BROWSER_APP_PROFILE_STRING: string;
 	export const FPS_BROWSER_USER_PROFILE_STRING: string;
@@ -155,7 +155,7 @@ declare module '$env/dynamic/private' {
 		CONDA_PROMPT_MODIFIER: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_4480: string;
+		EFC_6096: string;
 		FIG_JETBRAINS_SHELL_INTEGRATION: string;
 		FPS_BROWSER_APP_PROFILE_STRING: string;
 		FPS_BROWSER_USER_PROFILE_STRING: string;
