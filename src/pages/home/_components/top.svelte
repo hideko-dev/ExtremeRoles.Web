@@ -4,7 +4,7 @@
 <section id="top">
     <div class="left">
         <p class="title">ExtremeRoles</p>
-        <p class="bio">Bio Bio Bio Bio Bio Bio</p>
+        <p class="bio">Bio Bio Bio Bio Bio Bio Bio Bio Bio</p>
         <a class="btn" href="https://exr-docs.vercel.app">Documentation</a>
     </div>
     <div class="right">
