@@ -1,12 +1,11 @@
 <script>
-    import { _ } from "svelte-i18n"
 </script>
 
-<section>
+<section id="top">
     <div class="left">
         <p class="title">ExtremeRoles</p>
-        <p class="bio">{$_('home.bio')}</p>
-        <a class="btn" href="https://exr-docs.vercel.app">{$_('home.docs')}</a>
+        <p class="bio">Bio Bio Bio Bio Bio Bio Bio Bio Bio</p>
+        <a class="btn" href="https://exr-docs.vercel.app">Documentation</a>
     </div>
     <div class="right">
         <p>Img</p>
